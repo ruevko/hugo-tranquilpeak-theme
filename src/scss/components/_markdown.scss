@@ -1,4 +1,5 @@
 // Set markdown headings font size on large screen and up
+/*
 @media #{$large-and-up} {
     .markdown {
         @each $key, $value in $markdown-headings-font-size {
@@ -8,8 +9,9 @@
         }
     }
 }
-
+*/
 // Reduce global font-size base and headings font size on small screen and down
+/*
 @media #{$small-and-down} {
     .markdown {
         @each $key, $value in $markdown-headings-font-size {
@@ -19,8 +21,9 @@
         }
     }
 }
-
+*/
 // Reduce global font-size base and headings font size on medium screen only
+/*
 @media #{$medium-only} {
     .markdown {
         @each $key, $value in $markdown-headings-font-size {
@@ -30,3 +33,4 @@
         }
     }
 }
+*/

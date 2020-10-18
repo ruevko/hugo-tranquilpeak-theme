@@ -14,7 +14,8 @@ body {
     height:         100%;
     margin:         0;
     padding:        0;
-    background:     white;
+    /* background:     white; */
+    background:     #0c0404; /* */
     font-family:    $font-family-base;
     font-size:      map-get($font-size, base);
     line-height:    $line-height-base;
@@ -61,13 +62,19 @@ h6 {
 }
 
 p {
-    margin: 0 0 1.5em 0;
+    /* margin: 0 0 1.5em 0; */
+    margin: 0 0 2rem 0; /* */
 }
 
 ul,
 ol,
 dl {
-    margin: 0 0 0.5em 0;
+    /* margin: 0 0 0.5em 0; */
+/* */
+    p {
+        margin: 0 0 1rem 0;
+    }
+/* */
 }
 
 a {
@@ -86,6 +93,8 @@ a {
 }
 
 table {
+    font-size:   map-get($font-size, medium); /* */
+    line-height: 1.6em; /* */
     width:           100%;
     background:      transparent;
     border-collapse: collapse;
@@ -106,12 +115,26 @@ table {
         }
     }
 }
+/* */
+sub {
+    vertical-align: bottom;
+    position:     relative;
+    top:             0.4em;
+}
 
+sup {
+    vertical-align: top;
+    position:  relative;
+    bottom:       0.4em;
+}
+/* */
 hr {
-    margin:     1.5em 0 0;
+    /* margin:     1.5em 0 0; */
+    margin:     1.5rem 0; /* */
     outline:    none;
     border:     none;
-    border-top: 1px solid #eef2f8;
+    /* border-top: 1px solid #eef2f8; */
+    border-bottom: map-get($header, border); /* */
 }
 
 dl {
@@ -135,13 +158,15 @@ pre > code {
     // To override cursor attribute of `.tag` components
     cursor:      text;
     overflow-x:  auto;
-    line-height: map-get($highlight, line-height) + 0.4rem;
-    font-size:   map-get($highlight, font-size);
+    /* line-height: map-get($highlight, line-height) + 0.4rem; */
+    /* font-size:   map-get($highlight, font-size); */
+    line-height: map-get($highlight, line-height); /* */
 }
 
 // inline code
 code {
-    font-size:        map-get($font-size, medium);
+    /* font-size:        map-get($font-size, medium); */
+    font-size:        map-get($font-size, small) + 0.1rem; /* */
     display:          inline-block;
     font-family:      map-get($font-families, 'code');
     font-weight:      400;
@@ -168,9 +193,11 @@ blockquote {
 
 // Reduce global font-size base and headings font size on small screen and down
 @media #{$small-and-down} {
+/*
     code {
         font-size: map-get($font-size, medium) - $font-size-base-sm-screen-reduction-factor;
     }
+*/
     @each $key, $value in $headings-font-size {
         #{$key} {
             font-size: $value - $headings-font-size-sm-screen-reduction-factor;
@@ -186,4 +213,3 @@ blockquote {
         }
     }
 }
-

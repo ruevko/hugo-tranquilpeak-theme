@@ -2,10 +2,13 @@
 // --------------------------------------------
 
 // Font families
-$open-sans:            'Open Sans';
-$open-sans-sans-serif: 'Open Sans', sans-serif;
+/* $open-sans:            'Open Sans'; */
+$open-sans:            'Montserrat'; /* */
+/* $open-sans-sans-serif: 'Open Sans', sans-serif; */
+$open-sans-sans-serif: 'Montserrat', sans-serif; /* */
 $merriweather-serif:   'Merriweather', serif;
-$menlo:                 Menlo, Consolas, monospace;
+/* $menlo:                 Menlo, Consolas, monospace; */
+$menlo:                'Source Code Pro', monospace; /* */
 
 $font-family-base: $open-sans-sans-serif;
 
@@ -125,7 +128,8 @@ $headings-font-size: (
 // Reduction of headings font size on small screen and down
 $headings-font-size-sm-screen-reduction-factor: 0.2rem;
 // Reduction of headings font size on medium screen only
-$headings-font-size-md-screen-reduction-factor: 0.15rem;
+/* $headings-font-size-md-screen-reduction-factor: 0.15rem; */
+$headings-font-size-md-screen-reduction-factor: 0.1rem; /* */
 
 // Layout settings
 // Files are located in `layout` folder
@@ -141,7 +145,8 @@ $header:(
     'height':     55px,
     'background': #fff,
     'color':      #88909a,
-    'border':     1px solid #eef2f8
+    /* 'border':     1px solid #eef2f8 */
+    'border':     1.5px solid #eef2f8 /* */
 );
 
 // Sidebar
@@ -248,8 +253,10 @@ $post-thumbnail-image-width: 140px;
 
 // Tooltip
 $tooltip: (
-    'min-width':    180px,
-    'background':   rgba(0, 0, 20, 0.93),
+    /* 'min-width':    180px, */
+    'min-width':    90px, /* */
+    /* 'background':   rgba(0, 0, 20, 0.93), */
+    'background':   rgba(0, 0, 20, 0.9), /* */
     // Don't change this value, used to horizontally center the tooltip content
     'arrow-width':  15px,
     // Don't change this value, used to vertically center the tooltip content

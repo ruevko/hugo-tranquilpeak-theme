@@ -1,7 +1,9 @@
 .post-actions-wrap {
-    height:      60px;
+    /* height:      60px; */
+    height:      50px; /* */
     padding:     0;
-    line-height: 60px;
+    /* line-height: 60px; */
+    line-height: 50px; /* */
     clear:       both;
 
     ul.post-actions {
@@ -18,7 +20,8 @@
     // Post's navigation options
     ul.post-action-nav {
         // Best width for responsive post's navigation panel on small screen and up
-        width:   35%;
+        /* width:   35%; */
+        width:   55%; /* */
         // On very small screen `.post-actions-nav` will be above `.post-actions-share`
         z-index: map-get($z-indexes, c-post-bottom-bar) + 2;
 
@@ -32,28 +35,46 @@
                     margin-left: 15px;
                 }
             }
+/* */
+            a.post-action-btn {
+                i {
+                    margin: 0px 3px;
+                }
+                span {
+                    position: relative;
+                    bottom: 1px;
+                }
+            }
+/* */
         }
     }
     // Post's share options
     ul.post-action-share {
         // 100% minus width of `.post-action-nav`,
         // best width for responsive post's share panel on small screen and up
-        width:   65%;
+        /* width:   65%; */
+        width:   45%; /* */
         // On very small screen `.post-actions-nav` will be above `.post-actions-share`
         z-index: map-get($z-indexes, c-post-bottom-bar) + 1;
 
         li.post-action {
             float: right;
-
+/* */
+            .post-action-btn {
+                margin-left: 15px;
+            }
+/* */
+/*
             &:nth-child(n + 3) {
                 .post-action-btn {
                     margin-right: 15px;
                 }
             }
+/*
         }
     }
 }
-
+/*
 // Increase width of `.post-actions-share` on small screen
 @media #{$small-and-down} {
     .post-actions-wrap {
@@ -81,7 +102,7 @@
         }
     }
 }
-
+*/
 @media print {
     .post-actions-wrap {
         display: none;

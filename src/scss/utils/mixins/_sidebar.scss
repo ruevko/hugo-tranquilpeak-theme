@@ -5,11 +5,13 @@
     // Author information
     .sidebar-profile {
         .sidebar-profile-picture {
-            width:          30px;
-            height:         30px;
-            line-height:    30px;
-            vertical-align: middle;
-            border-radius:  30px;
+            /* width:          30px; */
+            width:          52px; /* */
+            /* height:         30px; */
+            height:         60px;  /* */
+            /* line-height:    30px; */
+            /* vertical-align: middle; */
+            /* border-radius:  30px; */
         }
         .sidebar-profile-name {
             display: none;
@@ -25,7 +27,7 @@
                 width:      100%;
 
                 .sidebar-button-icon {
-                    font-size:      2rem;
+                    /* font-size:      2rem; */
                     display:        inline-block;
                     text-align:     center;
                     width:          30px;
@@ -58,14 +60,18 @@
         padding-bottom: 7.5px;
 
         .sidebar-profile-picture {
-            width:         90px;
+            /* width:         90px; */
+            width:         78px; /* */
             height:        90px;
-            border-radius: 90px;
-            margin-bottom: 5px;
+            /* border-radius: 90px; */
+            /* margin-bottom: 5px; */
+            margin-bottom: 15px; /* */
         }
+/*
         .sidebar-profile-name {
             font-size: 1.6rem;
         }
+*/
     }
     // Buttons
     ul.sidebar-buttons {
@@ -74,13 +80,14 @@
 
             .sidebar-button-link {
                 text-align:   left;
-                width:        auto;
+                /* width:        auto; */
+                width:        fit-content; /* */
                 padding-left: 23px;
                 padding-top:  0;
 
                 // Font-awesome icon
                 .sidebar-button-icon {
-                    font-size:      2rem;
+                    /* font-size:      2rem; */
                     display:        inline-block;
                     text-align:     center;
                     width:          30px;
@@ -131,10 +138,13 @@
         padding-bottom: 7.5px;
 
         .sidebar-profile-picture {
-            width:         90px;
-            height:        90px;
-            border-radius: 90px;
-            margin-bottom: 5px;
+            /* width:         90px; */
+            width:         104px;  /* */
+            /* height:        90px; */
+            height:        120px; /* */
+            /* border-radius: 90px; */
+            /* margin-bottom: 5px; */
+            margin-bottom: 15px; /* */
         }
         .sidebar-profile-bio,
         .sidebar-profile-job,
@@ -161,12 +171,13 @@
             box-sizing: border-box;
             .sidebar-button-link {
                 text-align:  left;
-                width:       auto;
+                /* width:       auto; */
+                width:       fit-content; /* */
                 padding-top: 0;
                 white-space: nowrap;
                 // Font-awesome icon
                 .sidebar-button-icon {
-                    font-size:      2rem;
+                    /* font-size:      2rem; */
                     float:          left;
                     text-align:     center;
                     width:          30px;

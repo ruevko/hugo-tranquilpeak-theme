@@ -1,10 +1,12 @@
 .archive-result {
     display: none;
+    font-weight: 400; /* */
+    color: map-get($colors, light); /* */
 }
 
 .archive {
     .archive-title {
-        color: $font-color-base;
+        /* color: $font-color-base; */
 
         &:hover {
             text-decoration: underline;
@@ -12,6 +14,7 @@
     }
     .archive-posts {
         list-style: none;
+        margin:     8px 0; /* */
 
         .archive-post {
             .archive-post-title {
@@ -19,7 +22,8 @@
                 color:       $font-color-base;
 
                 &:hover {
-                    text-decoration: underline;
+                    /* text-decoration: underline; */
+                    text-decoration: none; /* */
                 }
             }
             .archive-post-date {
@@ -27,9 +31,12 @@
             }
             // Change styl of the list by adding font-awesome icon
             &::before {
-                font-family: 'FontAwesome';
-                content:     '\f0da';
-                font-size:   map-get($font-size, small);
+                /* font-family: 'FontAwesome'; */
+                /* content:     '\f0da'; */
+                content:     '\2022'; /* */
+                /* font-size:   map-get($font-size, small); */
+                font-size:   map-get($font-size, base) + 1rem; /* */
+                color:       map-get($colors, base); /* */
             }
         }
     }
