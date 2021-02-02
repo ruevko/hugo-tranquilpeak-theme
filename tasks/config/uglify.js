@@ -1,4 +1,4 @@
-var nanoid = require('nanoid');
+var { nanoid } = require('nanoid');
 
 module.exports = function(grunt) {
   var website = {};
