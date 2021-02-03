@@ -32,6 +32,7 @@
         }
 
         .pagination-number {
+            font-weight: 700; /* */
             float:     right;
             font-size: map-get($font-size, small);
             color:     map-get($colors, light);
