@@ -20,7 +20,7 @@
         color:            #fff;
         content:          attr(data-tooltip);
         /* font-size:        0.93em; */
-        font-size:        map-get($font-size, small); /* */
+        font-size:        map-get($font-size, small) - 0.1rem; /* */
         line-height:      $line-height-base;
         /* border-radius:    5px; */
         border-radius:    6px; /* */

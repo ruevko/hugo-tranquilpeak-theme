@@ -35,7 +35,7 @@
                 /* content:     '\f0da'; */
                 content:     '\2022'; /* */
                 /* font-size:   map-get($font-size, small); */
-                font-size:   map-get($font-size, base) + 1rem; /* */
+                font-size:   map-get($font-size, base) + 1.2rem; /* */
                 color:       map-get($colors, base); /* */
             }
         }

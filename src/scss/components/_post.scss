@@ -17,7 +17,8 @@
     }
     // Post meta contains post's date, post's categories and tags
     .post-meta {
-        line-height: 1.5em;
+        /* line-height: 1.5em; */
+        letter-spacing: .02em; /* */
         font-family: map-get($font-families, 'post-meta');
         font-size:   map-get($font-size, small);
         font-weight: 400;
@@ -62,10 +63,8 @@
             a {
                 color: map-get($colors, base);
             }
-            h1 {
-                margin: 0 0 1rem 0;
-            }
-            h1+ul {
+            span+ul {
+                margin-top:       0;
                 padding:          1rem 1rem 1rem 4rem;
                 background-color: map-get($highlight, 'background');
                 font-family:      map-get($font-families, 'post-meta');
@@ -74,6 +73,26 @@
             li>ul {
                 font-weight:      400;
             }
+        }
+        #refs {
+            padding:          1rem 1rem 1rem 4rem;
+            background-color: map-get($highlight, 'background');
+            font-family:      map-get($font-families, 'post-meta');
+            div:last-child>p {
+                margin: 0;
+            }
+        }
+        .references, .footnotes {
+            font-size:   map-get($font-size, small) - 0.1rem;
+            line-height: 1.6em;
+        }
+        div.twitter-tweet, div.html-widget {
+            margin-left:  auto;
+            margin-right: auto;
+        }
+        div.twitter-tweet-rendered {
+            max-height: 225px;
+            overflow-y: scroll;
         }
 /* */
     }
@@ -86,12 +105,6 @@
             border-bottom:  map-get($header, border); /* */
         }
     }
-/* */
-    .references, .footnotes {
-        font-size:   map-get($font-size, small);
-        line-height: 1.6em;
-    }
-/* */
 }
 
 // Increase the font size of the post's title on medium screen (only for single post view)
@@ -133,7 +146,7 @@
             }
         }
         code {
-            font-size: map-get($font-size, small);
+            font-size: map-get($font-size, small) - 0.1rem;
         }
     }
 }

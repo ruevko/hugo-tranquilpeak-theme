@@ -1,7 +1,7 @@
 .caption {
     display:       block;
     font-family:   map-get($font-families, 'caption');
-    font-size:     map-get($font-size, small);
+    font-size:     map-get($font-size, small) - 0.1rem;
     color:         darken(map-get($colors, 'light'), 10%);
     text-align:    center;
     /* font-style:    italic; */

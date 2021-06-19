@@ -32,7 +32,7 @@
     }
     // postShorten meta contains post's date, post's categories and tags
     .postShorten-meta {
-        line-height: 1.5em;
+        /* line-height: 1.5em; */
 
         a {
             color: map-get($colors, light);
@@ -52,6 +52,7 @@
         font-family: map-get($font-families, 'post-excerpt-link');
         font-size:   map-get($font-size, small);
         font-weight: 400;
+        letter-spacing: .02em; /* */
     }
     .postShorten-excerpt,
     .postShorten-content {
@@ -59,6 +60,7 @@
         letter-spacing: -0.3px;
         font-family:    map-get($font-families, 'post-content');
         color:          map-get($colors, base);
+        font-size:      .9em; /* */
         font-weight:    400;
         overflow:       hidden;
         @include prefix('hypens', 'auto', 'webkit' 'moz');
