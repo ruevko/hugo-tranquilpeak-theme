@@ -50,13 +50,15 @@
 {{ end }}
 < -->
 
-<meta property="og:image" content="{{ .Site.Author.picture | absURL }}">
-{{ with .Params.coverImage }}
-  <meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ with .Params.thumbnailImage }}
-  <meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
+<meta property="og:image" content="
+  {{ if .Params.coverImage }}
+    {{ .Params.coverImage | absURL }}
+  {{ else if .Params.thumbnailImage }}
+    {{ .Params.thumbnailImage | absURL }}
+  {{ else if .Site.Author.picture }}
+    {{ .Site.Author.picture | absURL }}
+  {{ end }}
+">
 
 {{ if .IsPage }}
   {{ if not .PublishDate.IsZero }}
