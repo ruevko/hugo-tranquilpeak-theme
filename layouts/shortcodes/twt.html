@@ -1,0 +1,4 @@
+{{ (getJSON
+  "https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2F"
+  (.Get 0) "%2Fstatus%2F" (.Get 1) "&dnt=true&omit_script=true"
+).html | safeHTML }}
