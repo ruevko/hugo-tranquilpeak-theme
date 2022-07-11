@@ -35,14 +35,9 @@
     <div id="blog">
       {{ partial "header.html" . }}
       {{ partial "sidebar.html" . }}
-      {{ partial "post/header-cover.html" . }}
-      <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
-        class="{{ with .Params.coverImage }}hasCover{{ end }}
-               {{ if eq .Params.coverMeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
-               {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
-
+      <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
         <div id="categories-archives" class="main-content-wrap">
-          <form id="filter-form" action="##">
+          <form id="filter-form" action="#">
             <input name="category" type="text" class="form-control input--xlarge"
                    placeholder="{{ i18n "global.search_category" }}" autofocus="autofocus">
           </form>
@@ -83,7 +78,7 @@
                   <ul class="archive-posts">
                     {{ range ($.Scratch.GetSortedMapValues $path) }}
                       <li class="archive-post">
-                        <a class="archive-post-title" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="archive-post-date"> - {{ partial "internal/date" . }}</span>
+                        <a class="archive-post-title" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="archive-post-date"> - {{ partial "date" . }}</span>
                       </li>
                     {{ end }}
                     {{ range seq ($.Scratch.Get "max-level") }}
@@ -107,7 +102,7 @@
                       <a class="archive-post-title" href="{{ .Permalink }}">
                         {{ .Title }}
                       </a>
-                      <span class="archive-post-date"> - {{ partial "internal/date" . }}</span>
+                      <span class="archive-post-date"> - {{ partial "date" . }}</span>
                     </li>
                   {{ end }}
                 </ul>
@@ -119,8 +114,4 @@
         {{ partial "footer.html" . }}
       </div>
     </div>
-    {{ partial "about.html" . }}
-    {{ partial "cover.html" . }}
-  </body>
-  {{ partial "script.html" . }}
-</html>
+{{ partial "foot.html" . }}

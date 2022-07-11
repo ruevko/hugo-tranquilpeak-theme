@@ -1,8 +1,7 @@
-    {{ partial "foot_start.html" . }}
     {{ partial "about.html" . }}
-    {{ partial "search.html" . }}
-    {{ partial "cover.html" . }}
-    {{ partial "script.html" . }}
-    {{ partial "foot_end.html" . }}
+    {{ with .Site.Params.coverImage }}
+      <div id="cover" style="background-image:url('{{ . | absURL }}');"></div>
+    {{ end }}
   </body>
+  {{ partial "script.html" . }}
 </html>
