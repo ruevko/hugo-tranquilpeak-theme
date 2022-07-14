@@ -6,9 +6,37 @@
       <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
         <div id="archives" class="main-content-wrap">
           <form id="filter-form" action="#">
-            <input name="date" type="text" class="form-control input--xlarge"
+            <input name="date" type="text" class="form-control"
                    placeholder="{{ i18n "global.search_date" }}" autofocus="autofocus">
+            <span class="archive-result"
+                  data-message-zero="{{ i18n "global.posts_found.zero" }}"
+                  data-message-one="{{ i18n "global.posts_found.one" }}"
+                  data-message-other="{{ i18n "global.posts_found.other" }}"></span>
           </form>
+          <section class="boxes">
+            {{ range ((where .Site.RegularPages "Type" "posts").GroupByDate "2006").Reverse }}
+              {{ $year := .Key }}
+              <div class="archive box archive-year" data-date="{{ $year }}">
+                <h4 class="archive-title">{{ $year }}
+                  ({{ if gt (len .Pages) 1 }}
+                    {{ len .Pages }} {{ i18n "global.posts" | lower }}
+                  {{ else }}
+                    1 {{ i18n "global.post" | lower }}
+                  {{ end }})
+                </h4>
+                {{ range (.Pages.GroupByDate "01").Reverse }}
+                  <ul class="archive-posts archive-month" data-date="{{ $year }}{{ .Key }}">
+                    {{ range .Pages }}
+                      <li class="archive-post archive-day" data-date="{{ dateFormat "20060102" .Date }}">
+                        <span class="archive-post-date">{{ dateFormat "January" .Date }} &mdash;</span>
+                        <a class="archive-post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                      </li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+              </div>
+            {{ end }}
+          </section>
         </div>
         {{ partial "footer.html" . }}
       </div>
