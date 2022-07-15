@@ -2,7 +2,7 @@
   <div class="postShorten-meta post-meta">
     {{ if not (eq .Params.showDate false)  }}
       <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-        {{ partial "date.html" . }}
+        {{ dateFormat .Site.Params.dateFormat .Date }}
       </time>
     {{ end }}
     {{ with .Params.categories }}

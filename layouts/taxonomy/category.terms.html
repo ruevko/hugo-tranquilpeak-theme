@@ -28,7 +28,9 @@
                   {{ range .Pages.ByDate.Reverse }}
                     <li class="archive-post">
                       <a class="archive-post-title" href="{{ .Permalink }}">{{ .Title }}</a>
-                      <span class="archive-post-date">&mdash;{{ partial "date" . }}</span>
+                      <span class="archive-post-date">&mdash;
+                        {{ dateFormat .Site.Params.dateFormat .Date }}
+                      </span>
                     </li>
                   {{ end }}
                 </ul>
