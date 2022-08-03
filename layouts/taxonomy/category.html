@@ -5,7 +5,7 @@
       {{ partial "sidebar.html" . }}
       <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
           <section class="postShorten-group main-content-wrap">
-            {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) }}
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 9 }}
             {{ range $paginator.Pages }}
               {{ .Render "summary" }}
             {{ end }}
