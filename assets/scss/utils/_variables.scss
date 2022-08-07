@@ -2,27 +2,17 @@
 // --------------------------------------------
 
 // Font families
-$open-sans:            'Open Sans';
-$open-sans-sans-serif: 'Open Sans', sans-serif;
-$merriweather-serif:   'Merriweather', serif;
-$menlo:                 Menlo, Consolas, monospace;
-
-$font-family-base: $open-sans-sans-serif;
+$sans-serif: 'Montserrat', sans-serif;
+$serif:      'Merriweather', serif;
+$mono:       'Courier Prime', monospace;
 
 $font-families: (
-   // base
-   'headings':          $open-sans-sans-serif,
-   // components
-   'code':              $menlo,
-   'caption':           $merriweather-serif,
-   'image-gallery':     $open-sans,
-   'post-header-cover': $merriweather-serif,
-   'post-meta':         $open-sans-sans-serif,
-   'post-content':      $merriweather-serif,
-   'post-excerpt-link': $open-sans-sans-serif,
-   'highlight':         $menlo,
-   // layout
-   'sidebar':           $open-sans-sans-serif
+    'caption':      $serif,
+    'code':         $mono,
+    'headings':     $sans-serif,
+    'post-content': $serif,
+    'post-meta':    $sans-serif,
+    'sidebar':      $sans-serif
 );
 
 // equal to 15px
