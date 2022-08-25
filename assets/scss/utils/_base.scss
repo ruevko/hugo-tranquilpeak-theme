@@ -3,14 +3,11 @@ html {
     font-size:   10px;
     // Gives you better control of the font size when the first selected font is not available.
     @include prefix(text-size-adjust, 100%, 'ms' 'webkit');
-    // Overrides the highlight color shown when the user taps
-    //a link or a JavaScript clickable element in Safari on iPhone
-    @include prefix(tap-highlight-color, rgba(0, 0, 0, 0), 'webkit');
 }
 
 body {
-    width:          100%;
-    height:         100%;
+    width:          100vw;
+    height:         100vh;
     margin:         0;
     padding:        0;
     background:     white;
