@@ -1,19 +1,22 @@
 {{- .Scratch.Set "sidebarBehavior" (default 1 .Site.Params.sidebarBehavior) -}}
-{{- if and (in site.Params.mainSections .Type) (lt (.Scratch.Get "sidebarBehavior") 3) -}}
+{{- if and .IsPage (in site.Params.mainSections .Type) (lt (.Scratch.Get "sidebarBehavior") 3) -}}
   {{- .Scratch.Set "sidebarBehavior" (add (.Scratch.Get "sidebarBehavior") 3) -}}
 {{- end -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Lang }}">
   <head>
     {{ partial "meta.html" . }}
-    <title>{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</title>
-
-    <link rel="icon" href="{{ with .Site.Params.favicon }}{{ . | absURL }}{{ else }}/favicon.png{{ end }}">
-    {{ with .OutputFormats.Get "RSS" }}
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .RelPermalink }}">
+    <title>
+      {{- with i18n (print "global." (lower .Title)) }}{{ . }}{{ else }}{{ .Title }}{{ end -}}
+      {{- if not .IsHome }}{{ print " | " .Site.Title }}{{ end -}}
+    </title>
+    {{ with .Site.Params.favicon }}
+      <link rel="icon" href="{{ absURL . }}">
     {{ end }}
     <link rel="canonical" href="{{ .Permalink }}">
-
+    {{ with .OutputFormats.Get "RSS" }}
+      <link rel="alternate" href="{{ .Permalink }}" type="application/rss+xml" title="RSS">
+    {{ end }}
     <!--EXTERNAL STYLES-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -23,4 +26,7 @@
     {{ $mycss := resources.Get "scss/tranquilpeak.scss" | resources.ToCSS $mydict }}
     <link rel="stylesheet" href="{{ $mycss.Permalink | absURL }}">
     <!--CUSTOM STYLES-->
+    {{ if and .IsPage (not .Params.excludeHLJS) }}
+      <link rel="stylesheet" href="{{ "/resources/highlight.css" | absURL }}">
+    {{ end }}
   </head>

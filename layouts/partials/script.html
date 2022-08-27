@@ -6,3 +6,34 @@
 {{ $myjs := resources.Match "js/*.js" | resources.Concat "resources/tranquilpeak.js" | resources.Minify }}
 <script src="{{ $myjs.Permalink | absURL }}"></script>
 <!--CUSTOM SCRIPTS-->
+{{ if .IsPage }}
+  {{ if not .Params.excludeHLJS }}
+    <script src="{{ "/resources/highlight.min.js" | absURL }}"></script>
+    <script type="application/javascript">hljs.configure({ languages: [] }); hljs.highlightAll();</script>
+  {{ end }}
+  {{ if or .Params.includeMATH (in .Params.categories "Maths") }}
+    <script type="application/javascript">
+      //source: https://bookdown.org/yihui/blogdown/javascript.html
+      (function() {
+        var i, text, code, codes = document.getElementsByTagName('code');
+        for (i = 0; i < codes.length;) {
+          code = codes[i];
+          if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+            text = code.textContent;
+            if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+              text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+              code.textContent = text; }
+            if (/^\\\((.|\s)+\\\)$/.test(text) ||
+                /^\\\[(.|\s)+\\\]$/.test(text) ||
+                /^\$(.|\s)+\$$/.test(text) ||
+                /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+              code.outerHTML = code.innerHTML;
+              continue; }
+          } i++; }
+      })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"
+            integrity="sha512-M36RUChWzAh1veeenRZFql7HydLEnkYmoloiCvVrhz402UZgKI93qkV7SsaxtVKdN95Wzajh39ysrXCq34NTsg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  {{ end }}
+{{ end }}

@@ -14,7 +14,7 @@
                   data-message-other="{{ i18n "global.posts_found.other" }}"></span>
           </form>
           <section class="boxes">
-            {{ range ((where .Site.RegularPages "Type" "posts").GroupByDate "2006").Reverse }}
+            {{ range ((where .Site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006").Reverse }}
               {{ $year := .Key }}
               <div class="archive box archive-year" data-date="{{ $year }}">
                 <h4 class="archive-title">{{ $year }}
